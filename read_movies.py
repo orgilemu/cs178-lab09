@@ -50,7 +50,7 @@ def print_all_movies():
     for movie in items:
         print_movie(movie)
 
-def get_movies_by_title(title):
+def get_movies_by_title():
     search_title = input("enter a movie title: ")
     table = get_table()
     response = table.scan(
