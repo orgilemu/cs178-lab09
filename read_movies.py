@@ -3,7 +3,7 @@
 # Part of Lab 09 — feature/read-dynamo branch
 
 import boto3
-from boto3.dynamodb.conditions import Key
+from boto3.dynamodb.conditions import Key, Attr
 
 # -------------------------------------------------------
 # Configuration — update REGION if your table is elsewhere
@@ -50,11 +50,12 @@ def print_all_movies():
     for movie in items:
         print_movie(movie)
 
+
 def get_movies_by_title():
     search_title = input("enter a movie title: ")
     table = get_table()
     response = table.scan(
-        FilterExpression=Key("Title").contains(search_title)
+        FilterExpression=Attr("Title").contains(search_title)
     )
     items = response.get("Items", [])
     if items:
