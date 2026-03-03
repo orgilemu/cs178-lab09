@@ -19,3 +19,5 @@ python3 read_movies.py
 Reads all items from your DynamoDB `Movies` table and prints them to the terminal.
 
 > See the [Lab 09 instructions](https://hackmd.io/@profmoore/CS178_Lab09)
+
+
